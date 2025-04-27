@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        
+        <!-- Acción para abrir la vista de assets -->
+        <record id="act_open_inventory_services_assets_view" model="ir.actions.act_window">
+            <field name="name">Assets de productos</field>
+            <field name="res_model">inventory_services.assets</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form,graph</field>
+        </record>
+
+        <!-- Menú raíz -->
+        <menuitem
+            id="menu_inventory_services_root"
+            name="Servicio de inventario"
+            sequence="11"
+        />
+
+        <!-- Menú de assets, hijo del root -->
+        <menuitem
+            id="menu_inventory_services_assets"
+            name="Assets"
+            parent="menu_inventory_services_root"
+            groups="base.group_user"
+            action="act_open_inventory_services_assets_view"
+            sequence="12"
+        />
+
+    </data>
+</odoo>
