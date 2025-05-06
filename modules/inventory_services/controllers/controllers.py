@@ -3,6 +3,8 @@
 
 
 import json
+
+import requests
 from odoo.http import Response, request
 from odoo import http
 
@@ -70,4 +72,35 @@ class InventoryServices(http.Controller):
                 status=500,
                 content_type='application/json'
             )
+        
+    @http.route('/module/inventory-services/test', auth='public', type='http', methods=['GET'])  
+    def testing(self, **kw):
+        url="https://d130-161-56-10-65.ngrok-free.app/extract"
+        try:
+            response = requests.get(url, timeout=10)
+            print(response.status_code)
+            if response.status_code == 200:
+                data = response.json()
+                
+                return Response(
+                    json.dumps({'data': data, 'message': 'Data retrieved successfully'}),
+                    status=200,
+                    content_type='application/json'
+                )
+            else:
+                return Response(
+                    json.dumps({'data': None, 'message': 'Error retrieving data'}),
+                    status=500,
+                    content_type='application/json'
+                )
+        except Exception as e:
+            print(str(e), 'error')
+            return Response(
+                json.dumps({'data': None, 'message': 'Error retrieving data'}),
+                status=500,
+                content_type='application/json'
+            )
+            
+
+    
 

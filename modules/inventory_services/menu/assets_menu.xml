@@ -5,17 +5,25 @@
         
         <!-- Acción para abrir la vista de assets -->
         <record id="act_open_inventory_services_assets_view" model="ir.actions.act_window">
-            <field name="name">Assets de productos</field>
+            <field name="name">Assets de products</field>
             <field name="res_model">inventory_services.assets</field>
             <field name="type">ir.actions.act_window</field>
             <field name="view_mode">list,form,graph</field>
+        </record>
+
+        <record id="act_open_inventory_services_receipts_view" model="ir.actions.act_window">
+            <field name="name">Recepcion</field>
+            <field name="res_model">import.picking.wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
         </record>
 
         <!-- Menú raíz -->
         <menuitem
             id="menu_inventory_services_root"
             name="Servicio de inventario"
-            sequence="11"
+            sequence="1"
         />
 
         <!-- Menú de assets, hijo del root -->
@@ -25,7 +33,16 @@
             parent="menu_inventory_services_root"
             groups="base.group_user"
             action="act_open_inventory_services_assets_view"
-            sequence="12"
+            sequence="2"
+        />
+
+        <menuitem
+            id="menu_inventory_services_receipts"
+            name="Recepcion"
+            parent="menu_inventory_services_root"
+            groups="base.group_user"
+            action="act_open_inventory_services_receipts_view"
+            sequence="3"
         />
 
     </data>

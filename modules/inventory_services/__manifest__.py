@@ -24,6 +24,7 @@ Long description of module's purpose
     'data': [
         'security/ir.model.access.csv',
         'views/asset.xml',
+        'views/receip.xml',
         'views/views.xml',
         'views/templates.xml',
         'menu/assets_menu.xml'

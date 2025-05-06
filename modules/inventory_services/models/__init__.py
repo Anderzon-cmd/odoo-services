@@ -2,3 +2,4 @@
 
 from . import assets
 from . import product_assets
+from . import receip

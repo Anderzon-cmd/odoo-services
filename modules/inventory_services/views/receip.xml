@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_import_picking_wizard" model="ir.ui.view">
+            <field name="name">import.picking.wizard.form</field>
+            <field name="model">import.picking.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Importar Picking">
+                    <group>
+                        <field name="file"/>
+                    </group>
+                    <group>
+                        <field name="url"/>
+                    </group>
+                    <footer>
+                        <button string="Subir" type="object" name="action_import_file" class="btn-primary"/>
+                        <button string="Cancelar" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
+        
