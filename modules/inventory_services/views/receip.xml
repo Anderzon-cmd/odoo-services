@@ -7,14 +7,16 @@
             <field name="arch" type="xml">
                 <form string="Importar Picking">
                     <group>
-                        <field name="file"/>
+                        <field name="file" filename="file_name" />
+                        <field name="file_name" invisible="1" />
                     </group>
                     <group>
-                        <field name="url"/>
+                        <field name="url" />
                     </group>
                     <footer>
-                        <button string="Subir" type="object" name="action_import_file" class="btn-primary"/>
-                        <button string="Cancelar" special="cancel"/>
+                        <button string="Subir" type="object" name="action_import_file"
+                            class="btn-primary" />
+                        <button string="Cancelar" special="cancel" />
                     </footer>
                 </form>
             </field>
